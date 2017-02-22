@@ -15,9 +15,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("/getAll")
-	public List<User> getAll() {
-		return userService.getAll();
+	@RequestMapping("/list")
+	public List<User> getList(User user) {
+		return userService.getList(user);
 	}
 	
 	@RequestMapping("/get")

@@ -1,16 +1,9 @@
 package com.fengxf.spring_boot.model;
 
-public class User {
-	private Integer id;
+public class User extends BaseEntity {
 	private String name;
 	private String realName;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
