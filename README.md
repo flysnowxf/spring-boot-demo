@@ -6,5 +6,6 @@
 
 - Spring Boot
 - Mybatis
+- Mybatis-PageHelper
 - 数据源连接池 Druid
 - Maven
