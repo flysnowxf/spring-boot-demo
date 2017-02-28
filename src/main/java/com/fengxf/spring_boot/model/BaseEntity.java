@@ -1,12 +1,19 @@
 package com.fengxf.spring_boot.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
-public class BaseEntity {
+public class BaseEntity implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name = "Id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,4 +48,14 @@ public class BaseEntity {
 	public void setRows(Integer rows) {
 		this.rows = rows;
 	}
+
+	@Override
+	public String toString() {
+		if (id != null) {
+			return id.toString();
+		}
+		
+		return super.toString();
+	}
+	
 }

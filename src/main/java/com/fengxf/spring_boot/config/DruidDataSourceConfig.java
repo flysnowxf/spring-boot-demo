@@ -14,9 +14,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-@EnableTransactionManagement 
+@EnableTransactionManagement
 public class DruidDataSourceConfig implements EnvironmentAware {
-	
+
 	private RelaxedPropertyResolver propertyResolver;
 
 	@Override
@@ -26,22 +26,20 @@ public class DruidDataSourceConfig implements EnvironmentAware {
 
 	@Bean
 	public DataSource dataSource() {
-		System.out.println("注入druid！！！");
-		
-        DruidDataSource datasource = new DruidDataSource();
-        datasource.setUrl(propertyResolver.getProperty("url"));
-        datasource.setDriverClassName(propertyResolver.getProperty("driver-class-name"));
-        datasource.setUsername(propertyResolver.getProperty("username"));
-        datasource.setPassword(propertyResolver.getProperty("password"));
-        datasource.setTimeBetweenLogStatsMillis(60000);
-        
-        try {
-            datasource.setFilters("stat,wall");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-        return datasource;
+		DruidDataSource datasource = new DruidDataSource();
+		datasource.setUrl(propertyResolver.getProperty("url"));
+		datasource.setDriverClassName(propertyResolver.getProperty("driver-class-name"));
+		datasource.setUsername(propertyResolver.getProperty("username"));
+		datasource.setPassword(propertyResolver.getProperty("password"));
+		// datasource.setTimeBetweenLogStatsMillis(60000);
+
+		try {
+			datasource.setFilters("stat,wall");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return datasource;
 	}
-	
+
 }

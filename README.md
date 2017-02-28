@@ -3,9 +3,10 @@
 参考了其他作者的代码和写法，在此不一一说明。
 
 主要包括的技术栈：
-
 - Spring Boot
 - Mybatis
 - Mybatis-PageHelper
 - 数据源连接池 Druid
+- FreeMarker
+- Redis
 - Maven
