@@ -1,5 +1,28 @@
-/target
-/build
-/.settings
-/.classpath
-/.project
+# Common
+target
+build
+
+# Eclipse work
+.settings
+.classpath
+.project
+
+# Gradle work
+.gradle
+build
+
+# Maven work
+target
+
+# IntelliJ IDEA work
+*.idea
+*.iml
+*.ipr
+*.iws
+atlassian-ide-plugin.xml
+
+# Android
+local.properties
+
+# Mac OS X
+.DS_Store
